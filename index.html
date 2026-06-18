@@ -364,7 +364,7 @@ footer{border-top:1px solid var(--line-soft);padding:34px 0;text-align:center;co
   <div class="container reveal">
     <div class="eyebrow">The core reframe</div>
     <h2>The model is rarely the bottleneck</h2>
-    <p class="lead">Top models pass only <strong>50&ndash;60%</strong> of real software tasks on the standard benchmark (SWE-bench). When yours fails, your instinct is to reach for a bigger, pricier model. That instinct is usually <span class="red">wrong</span>. The gap between "smart on a test" and "reliable on your repo" is almost never about raw intelligence. It is about the environment you put the intelligence in.</p>
+    <p class="lead">Your agent botches a task. The obvious fix is a smarter, pricier model. Usually, that is the <span class="red">wrong</span> move. Even the best models pass only <strong>50&ndash;60%</strong> of real software tasks on SWE-bench (a public test set of actual GitHub bug reports), and the gap between "smart on a test" and "reliable on your repo" is almost never about raw intelligence. It is about the environment you put the intelligence in.</p>
 
     <div class="analogy">
       <div class="ahalf bad">
@@ -494,8 +494,8 @@ footer{border-top:1px solid var(--line-soft);padding:34px 0;text-align:center;co
 <section id="journey" style="background:var(--bg-2)">
   <div class="container reveal">
     <div class="eyebrow">The whole course</div>
-    <h2>Why your agent stalls at 80%, and how to get the last 20%</h2>
-    <p class="lead">Agents rarely fail at the start. They fail near the finish: declaring victory early, leaving work half-done, forgetting what they decided an hour ago. Each lesson below is one of those stalls, the reason it happens, and the fix. Four acts. Tap any to open it.</p>
+    <h2>The failures between a slick demo and something you can ship</h2>
+    <p class="lead">Getting an agent to a slick demo is easy. Getting to something you can actually ship is where it falls apart: it forgets yesterday's decisions, declares victory too early, and leaves the seams broken. Each failure below comes with why it happens and the fix. Four acts. Tap any to open it.</p>
 
     <!-- CH1 -->
     <div class="chapter">
@@ -596,7 +596,7 @@ footer{border-top:1px solid var(--line-soft);padding:34px 0;text-align:center;co
     <div class="grid g2">
       <div class="mini">
         <h4>1. Overreach vs. WIP = 1</h4>
-        <span class="sub">Asked to "add login," the greedy agent spirals. Flip to disciplined mode.</span>
+        <span class="sub">Asked to "add login," a greedy agent spirals into six half-built features. Flip on the one-task-at-a-time rule (WIP = 1).</span>
         <button class="flip-btn" id="spiralBtn">▶ Toggle WIP = 1</button>
         <div class="task-stack" id="taskStack"></div>
       </div>
