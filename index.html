@@ -320,8 +320,8 @@ footer{border-top:1px solid var(--line-soft);padding:34px 0;text-align:center;co
     <div class="nav-links">
       <a href="#reframe">The Idea</a>
       <a href="#demo">The Proof</a>
-      <a href="#harness">The 5 Parts</a>
-      <a href="#journey">12 Lessons</a>
+      <a href="#harness">The Harness</a>
+      <a href="#journey">The Fixes</a>
       <a href="#toolkit">The Files</a>
       <a href="#cheat">Cheat Sheet</a>
     </div>
@@ -335,7 +335,7 @@ footer{border-top:1px solid var(--line-soft);padding:34px 0;text-align:center;co
     <h1>You don't need a<br><span class="strike">smarter AI.</span><br>You need a better <span class="swap">harness.</span></h1>
     <p class="hero-sub">A plain-English tour of <strong>Harness Engineering</strong>: the quiet discipline that decides whether an AI coding assistant actually finishes your work or just confidently breaks it. Same model, wildly different results. Here is why.</p>
     <div class="hero-meta">
-      <span class="chip"><b>12</b> lessons, distilled</span>
+      <span class="chip"><b>20% → 100%</b> same model</span>
       <span class="chip"><b>~15</b> min read</span>
       <span class="chip">built for a <b>curious beginner</b></span>
     </div>
@@ -412,7 +412,7 @@ footer{border-top:1px solid var(--line-soft);padding:34px 0;text-align:center;co
     <div class="grid g3" style="margin-top:26px">
       <div class="card"><h3 style="font-size:17px">It is measurable</h3><p style="font-size:14px">A separate study had 3 engineers write <strong>zero code by hand</strong> for 5 months and let the agent build ~1,000,000 lines across 1,500 pull requests. Early progress was slow not because the model was weak, but because the <span class="amber">scaffolding</span> wasn't there yet.</p></div>
       <div class="card"><h3 style="font-size:17px">It is repeatable</h3><p style="font-size:14px">A team adding endpoints to a real app saw the bare agent burn <strong>40% of its memory</strong> just figuring out the codebase, then ship code with runtime errors. With a harness, the same model passed every run.</p></div>
-      <div class="card"><h3 style="font-size:17px">It is cheap to fix</h3><p style="font-size:14px">The punchline from the course: <strong>one good instructions file can beat a model upgrade</strong>, and it's free. You are leaving reliability on the table that costs nothing to pick up.</p></div>
+      <div class="card"><h3 style="font-size:17px">It is cheap to fix</h3><p style="font-size:14px">The punchline from the course: <strong>one good instructions file can beat a model upgrade</strong>, and it costs nothing. Most teams walk right past it.</p></div>
     </div>
   </div>
 </section>
@@ -494,8 +494,8 @@ footer{border-top:1px solid var(--line-soft);padding:34px 0;text-align:center;co
 <section id="journey" style="background:var(--bg-2)">
   <div class="container reveal">
     <div class="eyebrow">The whole course</div>
-    <h2>12 failures, and the fix for each</h2>
-    <p class="lead">Every lesson is shaped the same way: here is a specific way agents fail, here is the structural reason, here is the fix. Grouped into four acts. Tap any lesson to open it.</p>
+    <h2>Why your agent stalls at 80%, and how to get the last 20%</h2>
+    <p class="lead">Agents rarely fail at the start. They fail near the finish: declaring victory early, leaving work half-done, forgetting what they decided an hour ago. Each lesson below is one of those stalls, the reason it happens, and the fix. Four acts. Tap any to open it.</p>
 
     <!-- CH1 -->
     <div class="chapter">
@@ -590,8 +590,8 @@ footer{border-top:1px solid var(--line-soft);padding:34px 0;text-align:center;co
 <!-- TWO MINIS: overreach + gate -->
 <section id="minis">
   <div class="container reveal">
-    <div class="eyebrow">Two ideas worth playing with</div>
-    <h2>The two habits that quietly kill agents</h2>
+    <div class="eyebrow">Worth playing with</div>
+    <h2>The habits that quietly kill a coding session</h2>
     <p class="lead" style="margin-bottom:30px">Overreaching and faking "done" are the most common failures, and the most fun to see. Try both.</p>
     <div class="grid g2">
       <div class="mini">
@@ -632,7 +632,7 @@ footer{border-top:1px solid var(--line-soft);padding:34px 0;text-align:center;co
     <div class="code-wrap">
       <div class="code-bar"><span class="d" style="background:#ff5f57"></span><span class="d" style="background:#febc2e"></span><span class="d" style="background:#28c840"></span><span class="fn" id="codeFn">AGENTS.md</span><span class="role" id="codeRole">the map &amp; the rules</span></div>
 
-      <div class="codepane on" data-c="agents"><pre><span class="cmt"># AGENTS.md  —  the agent reads this FIRST, every session</span>
+      <div class="codepane on" data-c="agents"><pre><span class="cmt"># AGENTS.md: the agent reads this FIRST, every session</span>
 
 <span class="cmt">## Startup workflow (run before writing any code)</span>
 1. <span class="hl">pwd</span>                          <span class="cmt"># where am I?</span>
@@ -656,7 +656,7 @@ footer{border-top:1px solid var(--line-soft);padding:34px 0;text-align:center;co
 - docs/api-patterns.md      <span class="cmt"># when adding endpoints</span>
 - docs/database-rules.md    <span class="cmt"># when touching the DB</span></pre></div>
 
-      <div class="codepane" data-c="feat"><pre><span class="cmt">// feature_list.json  —  the single source of truth for "what's done"</span>
+      <div class="codepane" data-c="feat"><pre><span class="cmt">// feature_list.json: the single source of truth for "what's done"</span>
 {
   <span class="key">"rules"</span>: {
     <span class="key">"single_active_feature"</span>: <span class="hl">true</span>,
@@ -678,7 +678,7 @@ footer{border-top:1px solid var(--line-soft);padding:34px 0;text-align:center;co
   ]
 }</pre></div>
 
-      <div class="codepane" data-c="prog"><pre><span class="cmt"># claude-progress.md  —  the shift-handoff note</span>
+      <div class="codepane" data-c="prog"><pre><span class="cmt"># claude-progress.md: the shift-handoff note</span>
 
 <span class="cmt">## Current Verified State</span>
 - Repository root: <span class="str">/app</span>
@@ -697,7 +697,7 @@ footer{border-top:1px solid var(--line-soft);padding:34px 0;text-align:center;co
 - <span class="key">Next best step:</span> start chat-002, do NOT refactor the sidebar yet</pre></div>
 
       <div class="codepane" data-c="init"><pre><span class="cmt">#!/usr/bin/env bash</span>
-<span class="cmt"># init.sh  —  one command to get to a known-good baseline</span>
+<span class="cmt"># init.sh: one command to get to a known-good baseline</span>
 <span class="key">set</span> -euo pipefail
 
 INSTALL_CMD=(<span class="str">npm install</span>)
@@ -724,7 +724,7 @@ START_CMD=(<span class="str">npm run dev</span>)
   <div class="container reveal">
     <div class="eyebrow">Keep this</div>
     <h2>The whole course on one card</h2>
-    <p class="lead" style="margin-bottom:30px">If you remember nine things, you have the spine of harness engineering.</p>
+    <p class="lead" style="margin-bottom:30px">Remember these and you have the spine of the whole discipline. The rest is detail.</p>
     <div class="cheat">
       <div class="law"><div class="ln">01</div><h4>Blame the harness first</h4><p>When the agent fails, fix the environment before reaching for a bigger model. The bottleneck is almost never the brain.</p></div>
       <div class="law"><div class="ln">02</div><h4>Five subsystems</h4><p>Instructions, tools, environment, state, feedback. Feedback (real verify commands) is the cheapest, highest-return one.</p></div>
@@ -743,7 +743,7 @@ START_CMD=(<span class="str">npm run dev</span>)
 <section class="closing">
   <div class="container reveal">
     <div class="eyebrow" style="justify-content:center">The takeaway</div>
-    <h2>Reliability isn't a smarter model. It's a better cage for the one you have.</h2>
+    <h2>Reliability was never a smarter model. It's a better harness around the one you already have.</h2>
     <p class="lead">The intelligence is already in the box. Harness engineering is the unglamorous, compounding work of building an environment where that intelligence can't wander off, can't lie about being done, and can't forget what it learned yesterday.</p>
     <a class="cta" href="https://walkinglabs.github.io/learn-harness-engineering/en/" target="_blank" rel="noopener">Read the full course →</a>
     <p class="src">Source: <a href="https://walkinglabs.github.io/learn-harness-engineering/en/" target="_blank" rel="noopener">Learn Harness Engineering</a> (walkinglabs), drawing on published harness-engineering work from OpenAI and Anthropic. <span class="note-tag">note</span> The specific numbers above are the course's own illustrative cases, not independently verified benchmarks.</p>
