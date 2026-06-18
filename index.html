@@ -31,6 +31,16 @@
   --mono:'JetBrains Mono',ui-monospace,Menlo,monospace;
   --display:'Space Grotesk',system-ui,sans-serif;
   --body:'Inter',system-ui,-apple-system,sans-serif;
+  --lg-shadow:
+    0 0 6px rgba(0,0,0,.22),
+    0 4px 16px rgba(0,0,0,.45),
+    inset 0 1px 0 0 rgba(255,255,255,.15),
+    inset 2.5px 2.5px 0.5px -2px rgba(255,255,255,.15),
+    inset -2.5px -2.5px 0.5px -2px rgba(255,255,255,.08),
+    inset 1px 1px 1px -0.5px rgba(255,255,255,.11),
+    inset -1px -1px 1px -0.5px rgba(255,255,255,.05),
+    inset 0 0 8px 4px rgba(255,255,255,.03),
+    0 0 14px rgba(255,255,255,.05);
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
@@ -69,9 +79,14 @@ strong{color:var(--ink);font-weight:600}
 /* ---- progress + nav ---- */
 #progress{position:fixed;top:0;left:0;height:3px;width:0;z-index:100;
   background:linear-gradient(90deg,var(--amber),var(--teal));box-shadow:0 0 12px rgba(255,180,84,.5)}
-nav{position:fixed;top:0;left:0;right:0;z-index:90;
-  backdrop-filter:blur(14px);background:rgba(11,13,19,.72);border-bottom:1px solid var(--line-soft);
+nav{position:fixed;top:0;left:0;right:0;z-index:90;isolation:isolate;
+  background:rgba(18,21,30,.55);
+  -webkit-backdrop-filter:blur(5px) url(#liquid-distort-nav) saturate(165%);
+  backdrop-filter:blur(5px) url(#liquid-distort-nav) saturate(165%);
+  border-bottom:1px solid rgba(255,255,255,.08);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.09), 0 10px 30px -16px rgba(0,0,0,.6);
   transition:transform .35s ease}
+@supports not ((backdrop-filter:url(#x)) or (-webkit-backdrop-filter:url(#x))){nav{background:rgba(13,15,21,.86);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px)}}
 nav.hidden{transform:translateY(-100%)}
 .nav-in{max-width:var(--maxw);margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px}
 .brand{font-family:var(--display);font-weight:700;font-size:15px;letter-spacing:-.01em;display:flex;align-items:center;gap:10px}
@@ -335,6 +350,21 @@ footer{border-top:1px solid var(--line-soft);padding:34px 0;text-align:center;co
 
 /* analogy chaos-vs-structure art */
 .ahalf .art{width:100%;height:104px;margin-bottom:14px;display:block}
+
+/* ===== elevation: light, depth, life ===== */
+.sub,.dstat,.law,.step,.mini,.card,.sub-detail,.model-badge{box-shadow:var(--lg-shadow)}
+.demo,.climb,.primer,.sense-col,.ahalf,.code-wrap,.lec{box-shadow:inset 0 1px 0 rgba(255,255,255,.05),0 2px 4px rgba(0,0,0,.2),0 26px 52px -28px rgba(0,0,0,.72)}
+.sub,.law{transition:transform .25s ease,box-shadow .25s ease,background .2s ease,border-color .25s ease}
+.sub:hover,.law:hover{background:radial-gradient(240px circle at var(--mx,50%) var(--my,50%),rgba(255,180,84,.15),transparent 55%),var(--surface-2)}
+.law{position:relative}
+/* living hero */
+.hero-art{opacity:.55;width:500px;height:500px}
+.hero-art .spin-ring{transform-box:fill-box;transform-origin:center;animation:hspin 46s linear infinite}
+.hero-art .spin-ring-2{transform-box:fill-box;transform-origin:center;animation:hspin 64s linear infinite reverse}
+.hero-art .core-pulse{transform-box:fill-box;transform-origin:center;animation:hpulse 4.6s ease-in-out infinite}
+@keyframes hspin{to{transform:rotate(360deg)}}
+@keyframes hpulse{0%,100%{opacity:.6}50%{opacity:1}}
+@media(prefers-reduced-motion:reduce){.hero-art .spin-ring,.hero-art .spin-ring-2,.hero-art .core-pulse{animation:none}}
 </style>
 </head>
 <body>
@@ -357,6 +387,7 @@ footer{border-top:1px solid var(--line-soft);padding:34px 0;text-align:center;co
   <symbol id="ic-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M5 20a7 7 0 0 1 14 0"/></symbol>
   <symbol id="ic-alert" viewBox="0 0 24 24"><path d="M12 3 22 19H2Z"/><path d="M12 10v4M12 17h.01"/></symbol>
   <symbol id="ic-gamepad" viewBox="0 0 24 24"><rect x="2" y="8" width="20" height="10" rx="5"/><path d="M7 11v4M5 13h4"/><circle cx="16" cy="12" r="1" fill="currentColor" stroke="none"/><circle cx="18.5" cy="14.5" r="1" fill="currentColor" stroke="none"/></symbol>
+  <filter id="liquid-distort-nav" x="-20%" y="-20%" width="140%" height="140%" color-interpolation-filters="sRGB"><feTurbulence type="fractalNoise" baseFrequency="0.008 0.010" numOctaves="2" seed="5" result="t"/><feGaussianBlur in="t" stdDeviation="3" result="s"/><feDisplacementMap in="SourceGraphic" in2="s" scale="14" xChannelSelector="R" yChannelSelector="B"/></filter>
 </defs></svg>
 <nav id="nav">
   <div class="nav-in">
@@ -394,7 +425,9 @@ footer{border-top:1px solid var(--line-soft);padding:34px 0;text-align:center;co
     <line x1="398" y1="260" x2="450" y2="260" stroke="#34d1bf" stroke-opacity=".4"/>
     <circle cx="122" cy="122" r="3" fill="#34d1bf"/><circle cx="398" cy="122" r="3" fill="#34d1bf"/>
     <circle cx="122" cy="398" r="3" fill="#34d1bf"/><circle cx="398" cy="398" r="3" fill="#34d1bf"/>
-    <circle cx="260" cy="260" r="120" fill="url(#coreGlow)"/>
+    <g class="spin-ring"><circle cx="260" cy="260" r="150" stroke="#34d1bf" stroke-opacity=".3" stroke-width="1.5" stroke-dasharray="2 13"/></g>
+    <g class="spin-ring-2"><circle cx="260" cy="260" r="92" stroke="#ffb454" stroke-opacity=".32" stroke-width="1.5" stroke-dasharray="1 15"/></g>
+    <circle class="core-pulse" cx="260" cy="260" r="120" fill="url(#coreGlow)"/>
     <circle cx="260" cy="260" r="48" stroke="#ffb454" stroke-opacity=".55" stroke-width="1.5"/>
     <circle cx="260" cy="260" r="30" fill="#ffb454" fill-opacity=".16" stroke="#ffb454" stroke-width="1.5"/>
     <circle cx="260" cy="260" r="9" fill="#ffb454"/>
@@ -998,6 +1031,22 @@ document.querySelectorAll('.tab').forEach(tab=>{
 document.querySelectorAll('.nav-links a').forEach(a=>{
   a.addEventListener('click',e=>{e.preventDefault();document.querySelector(a.getAttribute('href')).scrollIntoView({behavior:'smooth'})});
 });
+
+/* ---------- cursor spotlight on tiles ---------- */
+document.querySelectorAll('.sub,.law').forEach(c=>{
+  c.addEventListener('mousemove',e=>{const r=c.getBoundingClientRect();
+    c.style.setProperty('--mx',((e.clientX-r.left)/r.width*100)+'%');
+    c.style.setProperty('--my',((e.clientY-r.top)/r.height*100)+'%');});
+});
+
+/* ---------- hero parallax ---------- */
+const heroEl=document.querySelector('.hero'),artEl=document.querySelector('.hero-art');
+if(heroEl&&artEl&&matchMedia('(pointer:fine)').matches){
+  heroEl.addEventListener('mousemove',e=>{const r=heroEl.getBoundingClientRect();
+    const x=(e.clientX/r.width-.5),y=(e.clientY/r.height-.5);
+    artEl.style.transform=`translateY(-50%) translate(${x*-22}px,${y*-18}px)`;});
+  heroEl.addEventListener('mouseleave',()=>{artEl.style.transform='translateY(-50%)';});
+}
 </script>
 </body>
 </html>
