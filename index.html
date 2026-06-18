@@ -398,15 +398,15 @@ footer{border-top:1px solid var(--line-soft);padding:34px 0;text-align:center;co
         <span class="toggle-label" id="lblHarness">With a harness</span>
       </div>
       <div class="demo-stats">
-        <div class="dstat"><div class="num" id="dTime">20 min</div><div class="lbl">time spent</div></div>
-        <div class="dstat"><div class="num" id="dCost">$9</div><div class="lbl">money spent</div></div>
-        <div class="dstat"><div class="num" id="dQual">Broken</div><div class="lbl">the result</div></div>
+        <div class="dstat"><div class="num" id="dFeat" style="color:var(--red)">0 working</div><div class="lbl">core features</div></div>
+        <div class="dstat"><div class="num" id="dShip" style="color:var(--red)">No</div><div class="lbl">shippable</div></div>
+        <div class="dstat"><div class="num" id="dWaste" style="color:var(--red)">All of it</div><div class="lbl">work wasted</div></div>
       </div>
       <div class="demo-screen bad" id="dScreen">
         <span class="face">💀</span>
         <span id="dDesc">It "finished" fast and cheap, then declared victory. The actual game pieces don't respond. Core features are dead on arrival.</span>
       </div>
-      <p class="demo-note">Slower and pricier, yes. But one of these you can ship, and one you throw away. Reliability, not speed, is the product.</p>
+      <p class="demo-note">It cost more to get there, 6 hours and $200 against 20 minutes and $9. But cheap and fast bought a broken toy. The only number that matters is whether it ships.</p>
     </div>
 
     <div class="grid g3" style="margin-top:26px">
@@ -768,9 +768,9 @@ const io=new IntersectionObserver((es)=>es.forEach(e=>{if(e.isIntersecting){e.ta
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 
 /* ---------- big toggle demo ---------- */
-const bare={time:'20 min',cost:'$9',qual:'Broken',face:'💀',cls:'bad',
+const bare={feat:'0 working',ship:'No',waste:'All of it',face:'💀',cls:'bad',
   desc:'It "finished" fast and cheap, then declared victory. The actual game pieces don\'t respond. Core features are dead on arrival.'};
-const harn={time:'6 hours',cost:'$200',qual:'Playable',face:'🎮',cls:'good',
+const harn={feat:'All working',ship:'Yes',waste:'None',face:'🎮',cls:'good',
   desc:'A planner expanded the goal, a builder implemented feature by feature, and an evaluator click-tested it for real. The result is a fully playable editor you can ship.'};
 const sw=document.getElementById('bigSwitch');
 function setDemo(on){
@@ -778,10 +778,10 @@ function setDemo(on){
   sw.classList.toggle('harness',on);
   document.getElementById('lblBare').classList.toggle('on',!on);
   document.getElementById('lblHarness').classList.toggle('on',on);
-  document.getElementById('dTime').textContent=d.time;
-  document.getElementById('dCost').textContent=d.cost;
-  document.getElementById('dQual').textContent=d.qual;
-  document.getElementById('dQual').style.color=on?'var(--teal)':'var(--red)';
+  const col=on?'var(--teal)':'var(--red)';
+  [['dFeat',d.feat],['dShip',d.ship],['dWaste',d.waste]].forEach(([id,val])=>{
+    const el=document.getElementById(id);el.textContent=val;el.style.color=col;
+  });
   const sc=document.getElementById('dScreen');sc.className='demo-screen '+d.cls;
   sc.querySelector('.face').textContent=d.face;
   document.getElementById('dDesc').textContent=d.desc;
