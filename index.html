@@ -590,17 +590,17 @@ footer{border-top:1px solid var(--line-soft);padding:34px 0;text-align:center;co
         <div class="lec"><div class="lec-top"><span class="lec-no">01</span><span class="lec-ttl">Why capable agents still fail</span><span class="lec-arrow">›</span></div><div class="lec-body"><div class="lec-body-in">
           <div class="lec-row prob"><span class="lbl">The trap</span><span class="txt">A smart model fails, so you blame the model and pay for a bigger one.</span></div>
           <div class="lec-row fix"><span class="lbl">The fix</span><span class="txt">Check the harness first. Failures cluster in 5 fixable layers, not in the model's brain.</span></div>
-          <div class="lec-row eli5"><span class="lbl">Like you're 20</span><span class="txt">A straight-A student fails the exam because nobody told them the room, the time, or the syllabus. Not a brains problem.</span></div>
+          <div class="lec-row eli5"><span class="lbl">Picture this</span><span class="txt">A straight-A student fails the exam because nobody told them the room, the time, or the syllabus. Not a brains problem.</span></div>
         </div></div></div>
         <div class="lec"><div class="lec-top"><span class="lec-no">02</span><span class="lec-ttl">What a harness actually is</span><span class="lec-arrow">›</span></div><div class="lec-body"><div class="lec-body-in">
           <div class="lec-row prob"><span class="lbl">The trap</span><span class="txt">Thinking "harness" = one clever prompt file.</span></div>
           <div class="lec-row fix"><span class="lbl">The fix</span><span class="txt">It is 5 subsystems: instructions, tools, environment, state, feedback. Feedback gives the most bang per buck.</span></div>
-          <div class="lec-row eli5"><span class="lbl">Like you're 20</span><span class="txt">A new hire needs more than a welcome note. They need login access, the wiki, a desk, and a way to check their work.</span></div>
+          <div class="lec-row eli5"><span class="lbl">Picture this</span><span class="txt">A new hire needs more than a welcome note. They need login access, the wiki, a desk, and a way to check their work.</span></div>
         </div></div></div>
         <div class="lec"><div class="lec-top"><span class="lec-no">03</span><span class="lec-ttl">The repo is the only source of truth</span><span class="lec-arrow">›</span></div><div class="lec-body"><div class="lec-body-in">
           <div class="lec-row prob"><span class="lbl">The trap</span><span class="txt">Critical knowledge lives in Slack, Jira, and people's heads, all invisible to the agent.</span></div>
           <div class="lec-row fix"><span class="lbl">The fix</span><span class="txt">Write decisions into files in the repo, next to the code they govern. Pass the "fresh session test."</span></div>
-          <div class="lec-row eli5"><span class="lbl">Like you're 20</span><span class="txt">If "this road is closed" only lives in one guy's head, everyone keeps crashing into it. Put up a sign.</span></div>
+          <div class="lec-row eli5"><span class="lbl">Picture this</span><span class="txt">If "this road is closed" only lives in one guy's head, everyone keeps crashing into it. Put up a sign.</span></div>
         </div></div></div>
       </div>
     </div>
@@ -612,17 +612,17 @@ footer{border-top:1px solid var(--line-soft);padding:34px 0;text-align:center;co
         <div class="lec"><div class="lec-top"><span class="lec-no">04</span><span class="lec-ttl">Why one giant instruction file fails</span><span class="lec-arrow">›</span></div><div class="lec-body"><div class="lec-body-in">
           <div class="lec-row prob"><span class="lbl">The trap</span><span class="txt">The rules file grows to 600 lines. Only a third matters, and the key rule is buried in the middle where the model skims past it.</span></div>
           <div class="lec-row fix"><span class="lbl">The fix</span><span class="txt">Keep a short entry file (a router, ~100 lines). Push details into topic docs, revealed only when needed.</span></div>
-          <div class="lec-row eli5"><span class="lbl">Like you're 20</span><span class="txt">A good menu is one page with sections, not a 50-page novel. You read the section you need.</span></div>
+          <div class="lec-row eli5"><span class="lbl">Picture this</span><span class="txt">A good menu is one page with sections, not a 50-page novel. You read the section you need.</span></div>
         </div></div></div>
         <div class="lec"><div class="lec-top"><span class="lec-no">05</span><span class="lec-ttl">Why long tasks lose the plot</span><span class="lec-arrow">›</span></div><div class="lec-body"><div class="lec-body-in">
           <div class="lec-row prob"><span class="lbl">The trap</span><span class="txt">Memory fills up, the session resets, and the new session forgets <em>why</em> earlier choices were made. It redoes or contradicts past work.</span></div>
           <div class="lec-row fix"><span class="lbl">The fix</span><span class="txt">Write a progress log and a decisions log before "clocking out." The next session reads them and resumes in 3 minutes, not 15.</span></div>
-          <div class="lec-row eli5"><span class="lbl">Like you're 20</span><span class="txt">A nurse handing off a shift writes notes. Without them, the next nurse re-runs every test from scratch.</span></div>
+          <div class="lec-row eli5"><span class="lbl">Picture this</span><span class="txt">A nurse handing off a shift writes notes. Without them, the next nurse re-runs every test from scratch.</span></div>
         </div></div></div>
         <div class="lec"><div class="lec-top"><span class="lec-no">06</span><span class="lec-ttl">Why setup needs its own phase</span><span class="lec-arrow">›</span></div><div class="lec-body"><div class="lec-body-in">
           <div class="lec-row prob"><span class="lbl">The trap</span><span class="txt">Mixing "set up the project" with "build features" means the agent rushes the boring setup and pays for it later.</span></div>
           <div class="lec-row fix"><span class="lbl">The fix</span><span class="txt">First session builds only the foundation: runs, one test passes, progress file and task list exist. Start from a template, not an empty folder.</span></div>
-          <div class="lec-row eli5"><span class="lbl">Like you're 20</span><span class="txt">Cooks do "mise en place," chopping and laying out everything, before the heat is on. Prep is its own job.</span></div>
+          <div class="lec-row eli5"><span class="lbl">Picture this</span><span class="txt">Cooks do "mise en place," chopping and laying out everything, before the heat is on. Prep is its own job.</span></div>
         </div></div></div>
       </div>
     </div>
@@ -634,17 +634,17 @@ footer{border-top:1px solid var(--line-soft);padding:34px 0;text-align:center;co
         <div class="lec"><div class="lec-top"><span class="lec-no">07</span><span class="lec-ttl">Why agents bite off too much</span><span class="lec-arrow">›</span></div><div class="lec-body"><div class="lec-body-in">
           <div class="lec-row prob"><span class="lbl">The trap</span><span class="txt">"While I'm here, let me also fix this..." Six features started, zero finished. Adding a task is free, so it never stops.</span></div>
           <div class="lec-row fix"><span class="lbl">The fix</span><span class="txt">WIP = 1. One task at a time. It cannot start the next until the current one passes a real test. Less code, more done.</span></div>
-          <div class="lec-row eli5"><span class="lbl">Like you're 20</span><span class="txt">Juggle six balls at once and you drop all six. Finish one, then pick up the next.</span></div>
+          <div class="lec-row eli5"><span class="lbl">Picture this</span><span class="txt">Juggle six balls at once and you drop all six. Finish one, then pick up the next.</span></div>
         </div></div></div>
         <div class="lec"><div class="lec-top"><span class="lec-no">08</span><span class="lec-ttl">Why "done" needs a definition</span><span class="lec-arrow">›</span></div><div class="lec-body"><div class="lec-body-in">
           <div class="lec-row prob"><span class="lbl">The trap</span><span class="txt">"Done" means different things to you and the agent. Loose notes like "cart mostly done" are useless to the next session.</span></div>
           <div class="lec-row fix"><span class="lbl">The fix</span><span class="txt">A machine-readable feature list: each item has a behavior, a verify command, and a state. The agent can't flip the state itself, the passing test does.</span></div>
-          <div class="lec-row eli5"><span class="lbl">Like you're 20</span><span class="txt">A contractor's checklist with inspections, not "house mostly built, trust me."</span></div>
+          <div class="lec-row eli5"><span class="lbl">Picture this</span><span class="txt">A contractor's checklist with inspections, not "house mostly built, trust me."</span></div>
         </div></div></div>
         <div class="lec"><div class="lec-top"><span class="lec-no">09</span><span class="lec-ttl">Why agents declare victory too early</span><span class="lec-arrow">›</span></div><div class="lec-body"><div class="lec-body-in">
           <div class="lec-row prob"><span class="lbl">The trap</span><span class="txt">Models are systematically overconfident. "It's done!" really means "the code looks fine to me," which is not the same as "it works."</span></div>
           <div class="lec-row fix"><span class="lbl">The fix</span><span class="txt">Take the verdict out of the agent's hands. A separate, nitpicky checker runs real proof. Worker and inspector must be different roles.</span></div>
-          <div class="lec-row eli5"><span class="lbl">Like you're 20</span><span class="txt">You don't grade your own exam. An independent examiner does.</span></div>
+          <div class="lec-row eli5"><span class="lbl">Picture this</span><span class="txt">You don't grade your own exam. An independent examiner does.</span></div>
         </div></div></div>
       </div>
     </div>
@@ -656,17 +656,17 @@ footer{border-top:1px solid var(--line-soft);padding:34px 0;text-align:center;co
         <div class="lec"><div class="lec-top"><span class="lec-no">10</span><span class="lec-ttl">Why end-to-end tests change results</span><span class="lec-arrow">›</span></div><div class="lec-body"><div class="lec-body-in">
           <div class="lec-row prob"><span class="lbl">The trap</span><span class="txt">Each part passes its own isolated test, but the seams between them break. Isolation is exactly what hides the bug.</span></div>
           <div class="lec-row fix"><span class="lbl">The fix</span><span class="txt">Run the whole pipeline for real. Knowing it will be tested end-to-end even changes how the agent writes the code in the first place.</span></div>
-          <div class="lec-row eli5"><span class="lbl">Like you're 20</span><span class="txt">Every part of the car passes on the bench, but nobody drove it. Take it around the block.</span></div>
+          <div class="lec-row eli5"><span class="lbl">Picture this</span><span class="txt">Every part of the car passes on the bench, but nobody drove it. Take it around the block.</span></div>
         </div></div></div>
         <div class="lec"><div class="lec-top"><span class="lec-no">11</span><span class="lec-ttl">Why you must see inside the run</span><span class="lec-arrow">›</span></div><div class="lec-body"><div class="lec-body-in">
           <div class="lec-row prob"><span class="lbl">The trap</span><span class="txt">No logs, no scorecards. So "good or bad" becomes a vibe, and retries are blind guessing.</span></div>
           <div class="lec-row fix"><span class="lbl">The fix</span><span class="txt">Build in observability: runtime signals (what happened) plus decision artifacts like a scoring rubric (why it was accepted). One study cut a task from 45 to 15 minutes purely from this.</span></div>
-          <div class="lec-row eli5"><span class="lbl">Like you're 20</span><span class="txt">A doctor with no thermometer or chart is just guessing. Instruments turn opinion into evidence.</span></div>
+          <div class="lec-row eli5"><span class="lbl">Picture this</span><span class="txt">A doctor with no thermometer or chart is just guessing. Instruments turn opinion into evidence.</span></div>
         </div></div></div>
         <div class="lec"><div class="lec-top"><span class="lec-no">12</span><span class="lec-ttl">Why every session must end clean</span><span class="lec-arrow">›</span></div><div class="lec-body"><div class="lec-body-in">
           <div class="lec-row prob"><span class="lbl">The trap</span><span class="txt">Mess accumulates. Broken build, stray debug files, no notes. "Clean it up later" means never. Entropy is the default.</span></div>
           <div class="lec-row fix"><span class="lbl">The fix</span><span class="txt">"Clean state" is part of done: build passes, tests pass, progress logged, no junk, still launchable. Periodically delete harness rules the model has outgrown.</span></div>
-          <div class="lec-row eli5"><span class="lbl">Like you're 20</span><span class="txt">One coffee cup left out becomes ten by Friday. A clean kitchen stays clean only if each cook cleans up.</span></div>
+          <div class="lec-row eli5"><span class="lbl">Picture this</span><span class="txt">One coffee cup left out becomes ten by Friday. A clean kitchen stays clean only if each cook cleans up.</span></div>
         </div></div></div>
       </div>
     </div>
